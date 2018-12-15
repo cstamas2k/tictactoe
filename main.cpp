@@ -50,9 +50,8 @@ int main(int argc, char* argv[]) {
 		std::cout << "------------" << std::endl;
 		std::cout << "  " << board[6] << " | " << board[7] << " | " << board[8] << std::endl;
 
-		if (!playGame) break;
-
 		std::cout << "\nSelect a number to place an X (computer uses O)\n";
+		std::cout << "Press q to exit\n";
 		char input;
 		std::cin >> input;
 
@@ -66,9 +65,11 @@ int main(int argc, char* argv[]) {
 			case '7': input=6; break;
 			case '8': input=7; break;
 			case '9': input=8; break;
-		default: input = 10;
+			case 'q': playGame = false; break;
+			default: input = 10;
 		}
-
+		
+		if (!playGame) break;
 
 		if (input == 10) {
 		std::cout << "Bad input... exitting";
